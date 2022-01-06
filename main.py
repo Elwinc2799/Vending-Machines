@@ -1,13 +1,13 @@
 def calculate_balance(return_amount):
-    # initialise a list of cash notes
+    # initialise a list of cash notes and cents
     notes = [100, 50, 20, 10, 5, 1, 0.5, 0.2, 0.1, 0.05, 0.01]
     i = 0
     print("\nAmount to returned: RM%.2f" % return_amount)
     while return_amount > 0:
         i = i + 1
-        if return_amount < notes[i - 1]:    # search for the largest cash notes to pay back
+        if return_amount < notes[i - 1]:    # search for the largest cash notes or cents to pay back
             continue
-        num = return_amount // notes[i - 1]     # get number of cash note return
+        num = return_amount // notes[i - 1]     # get number of cash note or cents return
         return_amount = round(return_amount % notes[i - 1], 2)      # get remaining amount
         print("RM %.2f: %dpcs" % (notes[i - 1], num))
 
